@@ -243,7 +243,7 @@ my $new_name = join ("\.",@name,$format,$postfix);
 open OUT,"> $new_name";
 #open FGL,"> $filter_name";
 ###打印标题
-print OUT "Chr,Start,End,Ref,Alt,$header_info,MutationType,ExonicFunc.refGene,Refer_Gene,dbSNP,Nucleotide_Change,AA_Change,Gene_Annotation,Variant_Assessment,Phyological_System,Variant_Risk,System_Assesment,System_Risk,CLINSIG,Hgmd_Variant_class,ExAC_EAS,1000g2015aug_eas,ExAC_ALL,1000g2015aug_all,gnomAD_genome_ALL,gnomAD_genome_EAS,gnomAD_exome_ALL,gnomAD_exome_EAS,MCAP,REVEL,SIFT_score,SIFT_pred,Polyphen2_HDIV_score,Polyphen2_HDIV_pred,Polyphen2_HVAR_score,Polyphen2_HVAR_pred,LRT_score,LRT_pred,MutationTaster_score,MutationTaster_pred,MutationAssessor_score,MutationAssessor_pred,FATHMM_score,FATHMM_pred,omimID,hgmdID,AAChange.refGene\n";
+print OUT "Chr,Start,End,Ref,Alt,$header_info,MutationType,ExonicFunc.refGene,Refer_Gene,dbSNP,Nucleotide_Change,AA_Change,Gene_Annotation,Variant_Assessment,Phyological_System,Variant_Risk,System_Assesment,System_Risk,CLINSIG,Hgmd_Variant_class,ExAC_EAS,1000g2015aug_eas,ExAC_ALL,1000g2015aug_all,MCAP,REVEL,SIFT_score,SIFT_pred,Polyphen2_HDIV_score,Polyphen2_HDIV_pred,Polyphen2_HVAR_score,Polyphen2_HVAR_pred,LRT_score,LRT_pred,MutationTaster_score,MutationTaster_pred,MutationAssessor_score,MutationAssessor_pred,FATHMM_score,FATHMM_pred,omimID,hgmdID,AAChange.refGene\n";
 while(<IN>){
 	chomp;
 	s/\r//g;
@@ -277,14 +277,14 @@ while(<IN>){
                
                 print "CLINSIG don't match\n" if $title[10] ne "CLINSIG";print "ExAC_ALL don't match\n" if $title[16] ne "ExAC_ALL";
                 print "ExAC_EAS don't match\n" if $title[19] ne "ExAC_EAS";print "1000g2015aug_eas don't match\n" if $title[24] ne "1000g2015aug_eas";
-                print "1000g2015aug_all don't match\n" if $title[25] ne "1000g2015aug_all";print "SIFT_score don't match\n" if $title[47] ne "SIFT_score";
-                print "SIFT_pred don't match\n" if $title[48] ne "SIFT_pred";print "Polyphen2_HDIV_score don't match\n" if $title[49] ne "Polyphen2_HDIV_score";
-                print "Polyphen2_HDIV_pred don't match\n" if $title[50] ne "Polyphen2_HDIV_pred";print "Polyphen2_HVAR_score don't match\n" if $title[51] ne "Polyphen2_HVAR_score";
-                print "Polyphen2_HVAR_pred don't match\n" if $title[52] ne "Polyphen2_HVAR_pred";print "LRT_score don't match\n" if $title[53] ne "LRT_score";
-                print "LRT_pred don't match\n" if $title[54] ne "LRT_pred";print "MutationTaster_score don't match\n" if $title[55] ne "MutationTaster_score";
-                print "MutationTaster_pred don't match\n" if $title[56] ne "MutationTaster_pred";print "MutationAssessor_score don't match\n" if $title[57] ne "MutationAssessor_score";
-                print "MutationAssessor_pred don't match\n" if $title[58] ne "MutationAssessor_pred";print "FATHMM_score don't match\n" if $title[59] ne "FATHMM_score";
-                print "FATHMM_pred don't match\n" if $title[60] ne "FATHMM_pred";
+                print "1000g2015aug_all don't match\n" if $title[25] ne "1000g2015aug_all";print "SIFT_score don't match\n" if $title[30] ne "SIFT_score";
+                print "SIFT_pred don't match\n" if $title[31] ne "SIFT_pred";print "Polyphen2_HDIV_score don't match\n" if $title[32] ne "Polyphen2_HDIV_score";
+                print "Polyphen2_HDIV_pred don't match\n" if $title[33] ne "Polyphen2_HDIV_pred";print "Polyphen2_HVAR_score don't match\n" if $title[34] ne "Polyphen2_HVAR_score";
+                print "Polyphen2_HVAR_pred don't match\n" if $title[35] ne "Polyphen2_HVAR_pred";print "LRT_score don't match\n" if $title[36] ne "LRT_score";
+                print "LRT_pred don't match\n" if $title[37] ne "LRT_pred";print "MutationTaster_score don't match\n" if $title[38] ne "MutationTaster_score";
+                print "MutationTaster_pred don't match\n" if $title[39] ne "MutationTaster_pred";print "MutationAssessor_score don't match\n" if $title[40] ne "MutationAssessor_score";
+                print "MutationAssessor_pred don't match\n" if $title[41] ne "MutationAssessor_pred";print "FATHMM_score don't match\n" if $title[42] ne "FATHMM_score";
+                print "FATHMM_pred don't match\n" if $title[43] ne "FATHMM_pred";
 
                 next;
         }
@@ -310,7 +310,7 @@ while(<IN>){
 
 
 	###将要输出文件的，最后14列固化。固化前5列。
-	my $backward = join (",",$array[28],$array[32],$array[36],$array[40],$array[45],$array[46],$array[47],$array[48],$array[49],$array[50],$array[51],$array[52],$array[53],$array[54],$array[55],$array[56],$array[57],$array[58],$array[59],$array[60]);
+	my $backward = join (",",$array[28],$array[29],$array[30],$array[31],$array[32],$array[33],$array[34],$array[35],$array[36],$array[37],$array[38],$array[39],$array[40],$array[41],$array[42],$array[43]);
 	my $forward = join (",",$array[0],$array[1],$array[2],$array[3],$array[4]);
 	my $key  = $array[0]."\t".$array[1];
 	
@@ -410,13 +410,3 @@ while(<IN>){
 close IN;
 close OUT;
 print "Process End!!!\n";
-
-
-
-
-
-
-
-
-
-
